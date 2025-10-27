@@ -50,7 +50,7 @@ const FaqOne = () => {
                 >
                   <img
                     className="rounded-3"
-                    src="assets/images/about-us/founder.png"
+                    src="assets/images/about-us/main-image.jpg"
                     alt="Image_inner"
                   />
                 </div>

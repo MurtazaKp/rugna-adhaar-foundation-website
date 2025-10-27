@@ -14,8 +14,12 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "eslint": "^9.38.0",
+    "jspdf": "^3.0.3",
     "next": "15.3.2",
-   
+    "nodemailer": "^7.0.10",
+    "pdf-lib": "^1.17.1",
+    "pdfkit": "^0.17.2",
+    "razorpay": "^2.9.6",
     "react": "^18",
     "react-countup": "^6.5.3",
     "react-dom": "^18",
@@ -25,9 +29,9 @@
     "react-scroll-to-top": "^3.0.0",
     "react-slick": "^0.30.3",
     "react-slider": "^2.0.6",
+    "react-toastify": "^11.0.5",
     "sass": "^1.86.3",
     "select2": "^4.1.0-rc.0",
     "slick-carousel": "^1.8.1"
   }
-
 }

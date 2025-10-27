@@ -252,11 +252,12 @@
   .navbar-logo {
     img {
       
-     width: 100px;
-     height: 100px;
+     width: 50px !important;
+     height: 50px !important;
     }
 
     p{
+      font-size: 12px !important;
       line-height: normal !important;
       font-weight: 700 !important;
       color: #16171a !important;

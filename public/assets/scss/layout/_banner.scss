@@ -635,7 +635,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  margin-top: 90px;
+  margin-top: 170px;
   &::before {
     content: "";
     position: absolute;
@@ -747,6 +747,10 @@
   .banner-two__slider,.banner-two__slider-single,.banner-two__slider-bg{
     height: 500px;
   }
+
+  .common-banner{
+    margin-top: 110px;
+  }
 }
 
 
@@ -757,6 +761,10 @@
   .banner-two__slider-bg {
     height: 100vh;
   }
+
+    .common-banner {
+      margin-top: 180px !important;
+    }
 }
 
 /* ==== 

@@ -103,19 +103,23 @@ const HeaderFive = () => {
               <div className="main-header__menu-box">
                 <nav className="navbar p-0">
                   <div className="navbar-logo d-flex flex-column flex-sm-row align-items-center">
-                    <Link href="/">
+                    <Link className="" href="/">
                       <img src="/assets/images/logo.png" alt="Image_inner" />
+
+                      <div className="d-flex flex-column">
+                        <p className="font-bolder text-center fs-6">
+                          Rugna Aadhaar Foundation
+                        </p>
+                        <p className="font-bolder fs-6">
+                          {" "}
+                          Ask Old Age Home Orphanage
+                        </p>
+                      </div>
                     </Link>
-                    <div className="d-flex flex-column">
-                      <p className="font-bolder text-center ">
-                        Rugna Aadhaar Foundation
-                      </p>
-                      <p className="font-bolder"> Ask Old Age Home Orphanage</p>
-                    </div>
                   </div>
 
                   <div className="navbar__menu-wrapper">
-                    <div className="navbar__menu d-none d-xl-block">
+                    <div className="navbar__menu pe-0 d-none d-xl-block">
                       <ul className="navbar__list">
                         <li
                           className={`navbar__item navbar__item--has-children nav-fade ${
@@ -155,8 +159,8 @@ const HeaderFive = () => {
                                   : ""
                               }
                             >
-                              <Link href="/feed-the-helpless">
-                                Feed the Helpless
+                              <Link href="/meals-that-matter">
+                                Meals That Matter
                               </Link>
                             </li>
                             <li
@@ -166,8 +170,8 @@ const HeaderFive = () => {
                                   : ""
                               }
                             >
-                              <Link href="/help-the-homeless">
-                                Help the Homeless
+                              <Link href="/rebuild-lives-together">
+                                Rebuild Lives Together
                               </Link>
                             </li>
                           </ul>
@@ -191,7 +195,9 @@ const HeaderFive = () => {
                         </li>
                       </ul>
                     </div>
-                    <div className="contact-btn">
+                  </div>
+                  <div className="navbar__options">
+                    <div className="contact-btn ps-0 pe-4">
                       <div className="contact-icon">
                         <i className="fa-solid fa-phone-volume" />
                       </div>
@@ -200,11 +206,9 @@ const HeaderFive = () => {
                         <a href="tel:+919823105610">+91 98231 05610</a>
                       </div>
                     </div>
-                  </div>
-                  <div className="navbar__options">
                     <div className="navbar__mobile-options ">
                       <Link
-                        href="/feed-the-helpless"
+                        href="/meals-that-matter"
                         className="btn--primary d-none d-md-flex"
                       >
                         Donate Now
@@ -295,7 +299,7 @@ const HeaderFive = () => {
           <div className="mobile-menu__list" ref={mobileMenuListRef}></div>
 
           <div className="mobile-menu__cta nav-fade d-block d-md-none">
-            <Link href="/donate-us" className="btn--primary ">
+            <Link href="/meals-that-matter" className="btn--primary ">
               Donate Now <i className="fa-solid fa-arrow-right" />
             </Link>
           </div>

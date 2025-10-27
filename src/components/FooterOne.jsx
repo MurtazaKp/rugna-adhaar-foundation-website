@@ -5,11 +5,6 @@ const FooterOne = () => {
     <>
       <footer className="footer-two">
         <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <hr className="divider" />
-            </div>
-          </div>
           <div className="row gutter-60">
             <div className="col-12 col-md-6 col-xl-5">
               <div
@@ -52,28 +47,20 @@ const FooterOne = () => {
                       <i className="fa-brands fa-facebook-f" />
                     </Link>
                     <Link
-                      href="https://vimeo.com"
+                      href="https://www.youtube.com/@rugnahakkaandolan360/videos"
                       target="_blank"
                       aria-label="share us on vimeo"
-                      title="vimeo"
+                      title="youtube"
                     >
-                      <i className="fa-brands fa-vimeo-v" />
+                      <i className="fa-brands fa-youtube" />
                     </Link>
                     <Link
-                      href="https://x.com"
+                      href="https://www.instagram.com/askoldagehomengo/?igsh=MWM3YjZ2dGJiaTl6ag%3D%3D#"
                       target="_blank"
-                      aria-label="share us on twitter"
+                      aria-label="share us on instagram"
                       title="twitter"
                     >
-                      <i className="fa-brands fa-twitter" />
-                    </Link>
-                    <Link
-                      href="https://www.linkedin.com"
-                      target="_blank"
-                      aria-label="share us on linkedin"
-                      title="linkedin"
-                    >
-                      <i className="fa-brands fa-linkedin-in" />
+                      <i className="fa-brands fa-instagram" />
                     </Link>
                   </div>
                 </div>
@@ -148,7 +135,9 @@ const FooterOne = () => {
                       <Link href="/privacy-policy">Privacy Policy</Link>
                     </li>
                     <li>
-                      <Link href="/privacy-policy">Cookie Settings</Link>
+                      <Link href="/return-refund-policy">
+                        Return & Refund Policy
+                      </Link>
                     </li>
                   </ul>
                 </div>

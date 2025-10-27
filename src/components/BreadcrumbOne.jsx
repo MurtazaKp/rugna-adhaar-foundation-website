@@ -13,7 +13,7 @@ const BreadcrumbOne = ({ title }) => {
         </div>
       </div>
       <div className="banner-bg">
-        <img src="/assets/images/banner/banner-bg.png" alt="Image_inner" />
+        <img src="/assets/images/breadcrumb.jpg" alt="Image_inner" />
       </div>
       <div className="shape">
         <img src="/assets/images/shape.png" alt="Image_inner" />

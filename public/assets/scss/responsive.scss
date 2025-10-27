@@ -303,10 +303,18 @@
 
   // header
   .header {
-    .navbar-logo {
+  .navbar-logo {
       img {
-        max-width: 190px;
-        height: 100px;
+  
+        width: 100px !important;
+        height:100px !important;
+      }
+  
+      p {
+        font-size: 16px !important;
+        line-height: normal !important;
+        font-weight: 700 !important;
+        color: #16171a !important;
       }
     }
     .search-box {
@@ -627,7 +635,7 @@
 
   .common-banner {
     padding: 160px 0px;
-    margin-top: 140px;
+    margin-top: 185px;
   }
 
   .cause {

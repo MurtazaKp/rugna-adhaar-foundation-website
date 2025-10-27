@@ -114,7 +114,7 @@ const HelpOne = () => {
                     </div>
                     <div className="contact-content">
                       <p>Phone</p>
-                      <a href="tel:01-793-7938">+236 (456) 896 22</a>
+                      <a href="tel:+919823105610">+91 98231 05610</a>
                     </div>
                   </div>
                 </div>

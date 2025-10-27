@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
+import Script from "next/script";
 import { useState, useEffect } from "react"; // Import useEffect
 import ModalVideo from "react-modal-video";
+import { ToastContainer, toast } from "react-toastify";
 
 // --- Data for the essential items ---
 // !! IMPORTANT: Update 'imgSrc' to your actual image paths in /public/assets/...
@@ -77,6 +79,7 @@ const DonateInnerTwo = () => {
   // --- NEW --- State for 80G claim
   const [claim80G, setClaim80G] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   // State for all donor details in one object
   let [donorDetails, setDonorDetails] = useState({
@@ -130,42 +133,130 @@ const DonateInnerTwo = () => {
     });
   };
 
-  // Handler for the single form submission
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+  const resetFormStates = () => {
+    // 1. Reset Donor Details (and 80G fields)
+    setDonorDetails({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      panCard: "",
+    });
+    // 2. Reset Essential Item Quantities
+    setItemQuantities(initialQuantities);
 
-    // Consolidate all data
-    const allDonationData = {
-      ...donorDetails,
-      claim80G: claim80G,
-      essentialsDonation: itemQuantities,
-      essentialsTotalCost: essentialsTotal,
-      additionalCashAmount: Number(amount || 0),
-      grandTotal: grandTotal,
-    };
-
-    // If not claiming 80G, remove panCard and address
-    if (!claim80G) {
-      delete allDonationData.panCard;
-      delete allDonationData.address;
-    }
-
-    // You can now send 'allDonationData' to your API
-    console.log("Submitting Donation Data:", allDonationData);
-
-    // Example: Show a thank you message
-    alert(
-      `Thank you, ${allDonationData.firstName}! Your total donation is Rs. ${allDonationData.grandTotal}.`
-    );
-
-    // Optionally, reset the form here
+    setClaim80G(!claim80G);
   };
 
+  // Handler for the single form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsProcessing(true); // START processing
+
+    try {
+      // 1. Create order on the backend with total amount
+      const response = await fetch("/api/create-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ amount: grandTotal }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        // This error happens *before* the Razorpay box opens.
+        throw new Error(data.message || "Failed to create order");
+      }
+
+      // 2. Initialize Razorpay Checkout
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZOR_PAY_KEY_ID,
+        amount: grandTotal * 100, // Amount must be in paisa
+        currency: "INR",
+        name: "Rugna Adhaar Foundation",
+        description: "Donation",
+        order_id: data.id, // Razorpay returns `id` as order_id
+
+        // HANDLER FUNCTION (runs on successful payment ONLY)
+        handler: async function (response) {
+          // 3. Start server-side verification and keep loader active
+          try {
+            const res = await fetch("/api/verify-payment", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                ...response,
+                donor: {
+                  name: `${donorDetails.firstName} ${donorDetails.lastName}`,
+                  email: donorDetails.email,
+                  amount: grandTotal,
+                  claim80G: claim80G,
+                  pancard: donorDetails.panCard,
+                  address: donorDetails.address,
+                },
+              }),
+            });
+
+            if (!res.ok) {
+              const errorData = await res.json();
+              console.error("Payment verification failed:", errorData);
+              toast.error("Verification failed. Please contact support.");
+              return;
+            }
+
+            const data = await res.json();
+            console.log("Payment verification response:", data);
+            toast.success("Thank you for the Payment!");
+
+            resetFormStates();
+          } catch (err) {
+            console.error("Error calling /api/verify-payment:", err);
+            toast.error("Something Went Wrong. Please Try Again.");
+          } finally {
+            // FIX 1: Stop processing after successful payment and verification attempt
+            setIsProcessing(false);
+          }
+        },
+
+        // FIX 2: ADD CLOSE HANDLER: This runs when the user cancels, closes, or payment fails at the gateway.
+        modal: {
+          ondismiss: function () {
+            // Stop processing if the user closes the popup without paying
+            setIsProcessing(false);
+          },
+        },
+
+        prefill: {
+          name: `${donorDetails.firstName} ${donorDetails.lastName}`,
+          email: donorDetails.email,
+          contact: donorDetails.phone,
+        },
+        theme: {
+          color: "#3399CC",
+        },
+      };
+
+      // Load and open Razorpay pop-up
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (error) {
+      // This catches errors in step 1 (order creation failure)
+      console.error("Error during order creation or Rzp launch:", error);
+      toast.error("Could not start payment. Check details.");
+
+      // FIX 3: Stop processing only for errors that happened *before* launching the popup
+      setIsProcessing(false);
+    }
+  };
   // Logic to check if the custom amount button should be active
   const isCustomAmountActive = ![20, 50, 100, 200].includes(Number(amount));
 
   return (
     <>
+      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
+      <ToastContainer />
       <div className="cm-details donate-us community checkout faq">
         <div className="container">
           <div className="row gutter-60">
@@ -181,7 +272,7 @@ const DonateInnerTwo = () => {
                   data-aos-delay={100}
                 >
                   <img
-                    src="assets/images/donate-us/bannerImg.png"
+                    src="assets/images/home-slider/dharnaTwo.jpg"
                     alt="Image_inner"
                   />
                   <div className="video-btn-wrapper">
@@ -473,7 +564,14 @@ const DonateInnerTwo = () => {
                               title="Submit Donation"
                               className="btn--primary"
                             >
-                              Donate Now{" "}
+                              {isProcessing ? (
+                                <>
+                                  <div class="spinner-border" role="status" />
+                                  Processing
+                                </>
+                              ) : (
+                                "Donate Now"
+                              )}
                               <i className="fa-solid fa-arrow-right" />
                             </button>
                           </div>
@@ -708,7 +806,7 @@ const DonateInnerTwo = () => {
         channel="youtube"
         autoplay
         isOpen={isOpen}
-        videoId="5pqp2THBbdk"
+        videoId="9XWn0oIxCy8"
         onClose={() => setIsOpen(false)}
         allowFullScreen
       />

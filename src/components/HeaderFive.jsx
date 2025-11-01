@@ -104,13 +104,16 @@ const HeaderFive = () => {
                 <nav className="navbar p-0">
                   <div className="navbar-logo d-flex flex-column flex-sm-row align-items-center">
                     <Link className="" href="/">
-                      <img src="/assets/images/logo.png" alt="Image_inner" />
+                      <img
+                        src="/assets/images/white-logo.png"
+                        alt="Image_inner"
+                      />
 
                       <div className="d-flex flex-column">
-                        <p className="font-bolder text-center fs-6">
+                        <p className="font-bolder text-center text-white fs-6">
                           Rugna Aadhaar Foundation
                         </p>
-                        <p className="font-bolder fs-6">
+                        <p className="font-bolder fs-6 text-white">
                           {" "}
                           Ask Old Age Home Orphanage
                         </p>
@@ -135,7 +138,9 @@ const HeaderFive = () => {
                             ["/about-us"].includes(pathname) ? "active" : ""
                           }`}
                         >
-                          <Link href="/about-us">About Us</Link>
+                          <Link className="" href="/about-us">
+                            About Us
+                          </Link>
                         </li>
                         <li
                           className={`navbar__item navbar__item--has-children nav-fade ${
@@ -191,29 +196,45 @@ const HeaderFive = () => {
                             ["/contact-us"].includes(pathname) ? "active" : ""
                           } `}
                         >
-                          <Link href="/contact-us">Contact Us</Link>
+                          <Link className="" href="/contact-us">
+                            Contact Us
+                          </Link>
+                        </li>
+
+                        <li
+                          className={`navbar__item nav-fade ${
+                            ["//rebuild-lives-together"].includes(pathname)
+                              ? "active"
+                              : ""
+                          } `}
+                        >
+                          <Link className="" href="/rebuild-lives-together">
+                            Donate Now
+                          </Link>
                         </li>
                       </ul>
                     </div>
                   </div>
                   <div className="navbar__options">
-                    <div className="contact-btn ps-0 pe-4">
+                    <div className="contact-btn ps-0 pe-4 d-none d-md-flex">
                       <div className="contact-icon">
-                        <i className="fa-solid fa-phone-volume" />
+                        <i className="fa-solid fa-phone-volume text-white" />
                       </div>
-                      <div className="contact-content">
-                        <p>Call Us Now</p>
-                        <a href="tel:+919823105610">+91 98231 05610</a>
+                      <div className="contact-content ">
+                        <p className="text-white">Call Us Now</p>
+                        <a className="text-white" href="tel:+919823105610">
+                          +91 98231 05610
+                        </a>
                       </div>
                     </div>
-                    <div className="navbar__mobile-options ">
+                    {/* <div className="navbar__mobile-options ">
                       <Link
                         href="/meals-that-matter"
                         className="btn--primary d-none d-md-flex"
                       >
                         Donate Now
                       </Link>
-                    </div>
+                    </div> */}
                     <button
                       onClick={handleMobileMenu}
                       className="open-offcanvas-nav d-flex d-xl-none"

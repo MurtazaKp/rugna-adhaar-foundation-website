@@ -62,13 +62,12 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true}>
         <InitializeAOS />
         <RouteScrollToTop />
-        <ColorPalate />
+        {/* <ColorPalate /> */}
         <Preloader />
 
         {/* CustomCursor  */}
         <CustomCursor />
 
-        <TopBarFive />
         <HeaderFive />
         {children}
         <FooterOne />

@@ -314,7 +314,7 @@
         font-size: 16px !important;
         line-height: normal !important;
         font-weight: 700 !important;
-        color: #16171a !important;
+        color: #ffff !important;
       }
     }
     .search-box {
@@ -588,7 +588,7 @@
   }
 
   .header-secondary {
-    top: 50px;
+  
     .main-header__menu-box {
       filter: none !important;
       width: calc(100% - 80px);
@@ -807,6 +807,18 @@
       padding: 17px 40px;
     }
   }
+
+    @media (min-width: 1200px) {
+      .navbar__menu a {
+        color: white !important;
+      }
+  
+      .navbar__menu a:hover,
+      .navbar__menu a.active {
+        color: #fdca00 !important;
+        /* slightly lighter for hover if you like */
+      }
+    }
 
   // banner
   .banner {
@@ -1220,9 +1232,7 @@
 @media only screen and (max-width: 1739.98px) {
   // header
   .header-secondary {
-    .contact-btn {
-      display: none;
-    }
+   
 
     .navbar__menu {
       padding-inline-end: 40px;

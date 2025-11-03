@@ -809,9 +809,11 @@
   }
 
     @media (min-width: 1200px) {
-      .navbar__menu a {
+      .navbar__menu .nav-links {
         color: white !important;
       }
+
+       
   
       .navbar__menu a:hover,
       .navbar__menu a.active {

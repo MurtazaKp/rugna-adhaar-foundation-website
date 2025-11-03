@@ -43,19 +43,19 @@ const CauseOne = () => {
             <div className="cause__slider-inner">
               <div className="cause__slider-single">
                 <div className="thumb">
-                  <Link href="/cause-details">
+                  <Link href="/meals-that-matter">
                     <img
                       src="/assets/images/home/campaignOne.png"
                       alt="Image_inner"
                     />
                   </Link>
                   <div className="tag">
-                    <Link href="/our-causes">Food</Link>
+                    <Link href="/meals-that-matter">Food</Link>
                   </div>
                 </div>
                 <div className="content">
                   <h6>
-                    <Link href="/cause-details">Feed the Helpless</Link>
+                    <Link href="/meals-that-matter">Feed the Helpless</Link>
                   </h6>
                   <p>
                     With every meal we provide, we restore dignity and offer a
@@ -76,7 +76,7 @@ const CauseOne = () => {
                   </div>
                   <div className="cause__cta">
                     <Link
-                      href="/donate-us"
+                      href="/meals-that-matter"
                       aria-label="donate now"
                       title="donate now"
                       className="btn--secondary"
@@ -94,19 +94,21 @@ const CauseOne = () => {
             <div className="cause__slider-inner">
               <div className="cause__slider-single">
                 <div className="thumb">
-                  <Link href="/cause-details">
+                  <Link href="/rebuild-lives-together">
                     <img
                       src="/assets/images/home/campaignTwo.png"
                       alt="Image_inner"
                     />
                   </Link>
                   <div className="tag">
-                    <Link href="/our-causes">Health</Link>
+                    <Link href="/rebuild-lives-together">Health</Link>
                   </div>
                 </div>
                 <div className="content">
                   <h6>
-                    <Link href="/cause-details">Shelter for the Homeless</Link>
+                    <Link href="/rebuild-lives-together">
+                      Shelter for the Homeless
+                    </Link>
                   </h6>
                   <p>
                     Ensuring that those who are left abandoned, find a safe
@@ -127,7 +129,7 @@ const CauseOne = () => {
                   </div>
                   <div className="cause__cta">
                     <Link
-                      href="/donate-us"
+                      href="/rebuild-lives-together"
                       aria-label="donate now"
                       title="donate now"
                       className="btn--secondary"

@@ -129,7 +129,7 @@ const HeaderFive = () => {
                             ["/"].includes(pathname) ? "active" : ""
                           }`}
                         >
-                          <Link href="/" className=" ">
+                          <Link href="/" className="nav-links">
                             Home
                           </Link>
                         </li>
@@ -138,7 +138,7 @@ const HeaderFive = () => {
                             ["/about-us"].includes(pathname) ? "active" : ""
                           }`}
                         >
-                          <Link className="" href="/about-us">
+                          <Link className="nav-links" href="/about-us">
                             About Us
                           </Link>
                         </li>
@@ -152,7 +152,7 @@ const HeaderFive = () => {
                           <Link
                             href="#"
                             aria-label="dropdown menu"
-                            className="navbar__dropdown-label dropdown-label-alter"
+                            className="navbar__dropdown-label dropdown-label-alter nav-links"
                           >
                             Our Campaigns
                           </Link>
@@ -187,7 +187,7 @@ const HeaderFive = () => {
                             ["/blog-grid"].includes(pathname) ? "active" : ""
                           } `}
                         >
-                          <Link href="/blog-grid" className="">
+                          <Link href="/blog-grid" className="nav-links">
                             Blogs
                           </Link>
                         </li>
@@ -196,19 +196,22 @@ const HeaderFive = () => {
                             ["/contact-us"].includes(pathname) ? "active" : ""
                           } `}
                         >
-                          <Link className="" href="/contact-us">
+                          <Link className="nav-links" href="/contact-us">
                             Contact Us
                           </Link>
                         </li>
 
                         <li
                           className={`navbar__item nav-fade ${
-                            ["//rebuild-lives-together"].includes(pathname)
+                            ["/rebuild-lives-together"].includes(pathname)
                               ? "active"
                               : ""
                           } `}
                         >
-                          <Link className="" href="/rebuild-lives-together">
+                          <Link
+                            className="nav-links"
+                            href="/rebuild-lives-together"
+                          >
                             Donate Now
                           </Link>
                         </li>

@@ -20,7 +20,7 @@ const page = () => {
         <CustomCursor />
 
         {/* BreadcrumbOne */}
-        <BreadcrumbOne title="Donate Us" />
+        <BreadcrumbOne title="Meals That Matter" />
 
         {/* DonateInner */}
         <DonateInner />

@@ -12,7 +12,7 @@ const page = () => {
     <AOSWrap>
       <section className="page-wrapper">
         {/* BreadcrumbOne */}
-        <BreadcrumbOne title="Donate Us" />
+        <BreadcrumbOne title="Rebuild Lives Together" />
 
         {/* DonateInner */}
         <DonateInnerTwo />

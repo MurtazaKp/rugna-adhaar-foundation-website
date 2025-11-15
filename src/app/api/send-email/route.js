@@ -28,7 +28,7 @@ export async function POST(req) {
     // Send the email
     await transporter.sendMail({
       from: `"Rugna Aadhar Foundation" <${process.env.SMTP_USER}>`,
-      to: "khopoliwala52@gmail.com",
+      to: "dadaraogaikwad113@gmail.com",
       subject: "New Contact Form Submission",
       html: `
         <h2>New Contact Form Submission</h2>

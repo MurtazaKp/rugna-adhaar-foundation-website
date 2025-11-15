@@ -4,8 +4,49 @@ import BreadcrumbOne from "@/components/BreadcrumbOne";
 import AOSWrap from "@/helper/AOSWrap";
 
 export const metadata = {
-  title: "Charifund | Nonprofit & Fundraising Charity NEXT JS Template",
-  description: "Nonprofit & Fundraising Charity NEXT JS Template.",
+  // Primary SEO Tags
+  title: "A Place to Rest, A Place to Heal | Rugna Aadhaar Foundation Blog",
+  description:
+    "Explore the crucial role that safe havens and dedicated spaces play in the physical and emotional recovery of the vulnerable people served by Rugna Aadhaar.",
+  keywords:
+    "Safe Haven, Emotional Healing, Shelter Support, Community Care, Rugna Aadhaar Blog",
+
+  // Canonical URL for SEO
+  alternates: {
+    canonical:
+      "http://rugnafoundation.org/blog-details/a-place-to-rest-a-place-to-heal",
+  },
+
+  // Open Graph (Social Sharing - Facebook, LinkedIn, etc.)
+  openGraph: {
+    title: "A Place to Rest, A Place to Heal | Rugna Aadhaar Foundation Blog",
+    description:
+      "Read the full article on the vital role shelters play in the fight against poverty and homelessness.",
+    url: "http://rugnafoundation.org/blog-details/a-place-to-rest-a-place-to-heal", // <-- IMPORTANT: Replace with your final domain
+    siteName: "Rugna Aadhaar Foundation",
+    type: "article", // Crucial for blog posts
+    images: [
+      {
+        url: "/assets/images/blog/blogPosTwo/mainImage.png", // <-- IMPORTANT: Update this to the actual featured image of the post
+        width: 1200,
+        height: 630,
+        alt: "A Place to Rest, A Place to Heal",
+      },
+    ],
+    locale: "en_US",
+    // Optional: Add article specific tags
+    // publishedTime: '2023-11-15T00:00:00.000Z',
+    // authors: ['Rugna Aadhaar Team'],
+  },
+
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image", // Use large image for blog posts
+    title: "A Place to Rest, A Place to Heal | Rugna Aadhaar Foundation Blog",
+    description:
+      "Read the full article on the vital role shelters play in the fight against poverty and homelessness.",
+    image: "/assets/images/blog/blogPostTwo/mainImage.png", // <-- IMPORTANT: Update the image path for Twitter
+  },
 };
 
 export const samplePostData = {

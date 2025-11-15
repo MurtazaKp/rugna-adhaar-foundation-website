@@ -14,8 +14,44 @@ import TestimonialOne from "@/components/TestimonialOne";
 import AOSWrap from "@/helper/AOSWrap";
 
 export const metadata = {
-  title: "Charifund | Nonprofit & Fundraising Charity NEXT JS Template",
-  description: "Nonprofit & Fundraising Charity NEXT JS Template.",
+  title: "Rugna Aadhaar Foundation | Old Age Home, Orphanage & Charity",
+  description:
+    "Rugan Aadhar Foundation is committed to uplifting the lives of the homeless and helpless. Join us in making a difference, one life at a time.",
+  keywords:
+    "Rugna Aadhaar, Old Age Home, Orphanage, Charity, NGO, Homeless Help, Donate Pune, Nonprofit",
+
+  // Canonical URL for SEO (Added)
+  alternates: {
+    canonical: "http://rugnafoundation.org", // Matches the Open Graph URL
+  },
+
+  // Open Graph (Social Sharing - Facebook, LinkedIn, etc.)
+  openGraph: {
+    title: "Rugna Aadhaar Foundation | Uplifting the Homeless and Helpless",
+    description:
+      "Rugan Aadhar Foundation is committed to uplifting the lives of the homeless and helpless. Join us in making a difference, one life at a time.",
+    url: "http://rugnafoundation.org",
+    siteName: "Rugna Aadhaar Foundation",
+    type: "website",
+    images: [
+      {
+        url: "/assets/images/home/campaignOne.png",
+        width: 1200,
+        height: 630,
+        alt: "Rugna Aadhaar Foundation Logo and Mission",
+      },
+    ],
+    locale: "en_US",
+  },
+
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image",
+    title: "Rugna Aadhaar Foundation | Old Age Home, Orphanage & Charity",
+    description:
+      "Rugan Aadhar Foundation is committed to uplifting the lives of the homeless and helpless. Join us in making a difference, one life at a time.",
+    image: "/assets/images/home/campaignOne.png", // <-- IMPORTANT: Replace with your actual Twitter card image path
+  },
 };
 
 const page = () => {

@@ -4,8 +4,52 @@ import BreadcrumbOne from "@/components/BreadcrumbOne";
 import AOSWrap from "@/helper/AOSWrap";
 
 export const metadata = {
-  title: "Charifund | Nonprofit & Fundraising Charity NEXT JS Template",
-  description: "Nonprofit & Fundraising Charity NEXT JS Template.",
+  // Primary SEO Tags
+  title:
+    "How Providing Shelter Transforms Lives | Rugna Aadhaar Foundation Blog",
+  description:
+    "Read inspiring stories and understand the profound impact that safe shelter provision has on transforming the futures of individuals served by Rugna Aadhaar.",
+  keywords:
+    "Shelter Transformation, Life Impact, Homeless Success Stories, Charity Transformation, Rugna Aadhaar Blog",
+
+  // Canonical URL for SEO
+  alternates: {
+    canonical:
+      "http://rugnafoundation.org/blog-details/how-providing-shelter-transforms-lives",
+  },
+
+  // Open Graph (Social Sharing - Facebook, LinkedIn, etc.)
+  openGraph: {
+    title:
+      "How Providing Shelter Transforms Lives | Rugna Aadhaar Foundation Blog",
+    description:
+      "Read inspiring stories and understand the profound impact that safe shelter provision has on transforming the futures of individuals served by Rugna Aadhaar.",
+    url: "http://rugnafoundation.org/blog-details/how-providing-shelter-transforms-lives", // <-- IMPORTANT: Replace with your final domain
+    siteName: "Rugna Aadhaar Foundation",
+    type: "article", // Crucial for blog posts
+    images: [
+      {
+        url: "/assets/images/blog/blogPostThree/mainImage.png", // <-- IMPORTANT: Update this to the actual featured image of the post
+        width: 1200,
+        height: 630,
+        alt: "Shelter Transforms Lives",
+      },
+    ],
+    locale: "en_US",
+    // Optional: Add article specific tags
+    // publishedTime: '2023-12-01T00:00:00.000Z',
+    // authors: ['Rugna Aadhaar Team'],
+  },
+
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image", // Use large image for blog posts
+    title:
+      "How Providing Shelter Transforms Lives | Rugna Aadhaar Foundation Blog",
+    description:
+      "Read inspiring stories and understand the profound impact that safe shelter provision has on transforming the futures of individuals served by Rugna Aadhaar.",
+    image: "/assets/images/blog/blogPostThree/mainImage.png", // <-- IMPORTANT: Update the image path for Twitter
+  },
 };
 
 export const samplePostData = {

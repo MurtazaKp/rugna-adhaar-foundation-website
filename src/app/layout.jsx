@@ -13,15 +13,44 @@ import FooterOne from "@/components/FooterOne";
 import Preloader from "@/components/Preloader";
 import CustomCursor from "@/helper/CustomCursor";
 
-export const metadata = {
-  title: "Charifund | Nonprofit & Fundraising Charity NEXT JS Template",
-  description: "Nonprofit & Fundraising Charity NEXT JS Template.",
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Rugna Adhaar Foundation", // The official name of your organization
+  url: "https://rugna-adhaar-foundation-website.vercel.app/", // Your official website URL
+
+  // URL to your official logo (must be crawlable)
+  logo: "https://rugna-adhaar-foundation-website.vercel.app/images/logo.png",
+
+  description:
+    "A non-profit organization dedicated to providing shelter, support, and hope to individuals experiencing homelessness.", // A brief mission statement
+
+  // Link to your social media profiles (replace placeholders)
+  sameAs: [
+    "https://www.facebook.com/RugnaAdhaarFoundation",
+    "https://twitter.com/RugnaAdhaar",
+    "https://www.instagram.com/RugnaAdhaarFoundation",
+    "https://www.linkedin.com/company/RugnaAdhaarFoundation",
+  ],
+
+  // Optional: Add a contact point
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-98765-43210", // Your primary contact number
+    contactType: "customer service",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

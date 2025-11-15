@@ -3,8 +3,51 @@ import BreadcrumbOne from "@/components/BreadcrumbOne";
 import AOSWrap from "@/helper/AOSWrap";
 
 export const metadata = {
-  title: "Charifund | Nonprofit & Fundraising Charity NEXT JS Template",
-  description: "Nonprofit & Fundraising Charity NEXT JS Template.",
+  // Primary SEO Tags
+  title: "The Journey of Homelessness to Hope | Rugna Aadhaar Foundation Blog",
+  description:
+    "Follow the inspiring path of individuals from the despair of homelessness to finding renewed hope and stability through the support of the Rugna Aadhaar Foundation.",
+  keywords:
+    "Homelessness to Hope, Inspiring Journey, Life Transformation, Rugna Aadhaar Success, Charity Blog Stories",
+
+  // Canonical URL for SEO
+  alternates: {
+    canonical:
+      "http://rugnafoundation.org/blog-details/the-journey-of-homelessness-to-hope",
+  },
+
+  // Open Graph (Social Sharing - Facebook, LinkedIn, etc.)
+  openGraph: {
+    title:
+      "The Journey of Homelessness to Hope | Rugna Aadhaar Foundation Blog",
+    description:
+      "Follow the inspiring path of individuals from the despair of homelessness to finding renewed hope and stability through the support of the Rugna Aadhaar Foundation.",
+    url: "http://rugnafoundation.org/blog-details/the-journey-of-homelessness-to-hope", // <-- IMPORTANT: Replace with your final domain
+    siteName: "Rugna Aadhaar Foundation",
+    type: "article", // Crucial for blog posts
+    images: [
+      {
+        url: "/assets/images/blog/blogPostFour/mainImage.png", // <-- IMPORTANT: Update this to the actual featured image of the post
+        width: 1200,
+        height: 630,
+        alt: "Homelessness to Hope Journey",
+      },
+    ],
+    locale: "en_US",
+    // Optional: Add article specific tags
+    // publishedTime: '2024-01-10T00:00:00.000Z',
+    // authors: ['Rugna Aadhaar Team'],
+  },
+
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image", // Use large image for blog posts
+    title:
+      "The Journey of Homelessness to Hope | Rugna Aadhaar Foundation Blog",
+    description:
+      "Follow the inspiring path of individuals from the despair of homelessness to finding renewed hope and stability through the support of the Rugna Aadhaar Foundation.",
+    image: "/assets/images/blog/blogPostFour/mainImage.png", // <-- IMPORTANT: Update the image path for Twitter
+  },
 };
 
 export const samplePostData = {

@@ -3,8 +3,52 @@ import BreadcrumbOne from "@/components/BreadcrumbOne";
 import AOSWrap from "@/helper/AOSWrap";
 
 export const metadata = {
-  title: "Charifund | Nonprofit & Fundraising Charity NEXT JS Template",
-  description: "Nonprofit & Fundraising Charity NEXT JS Template.",
+  // Primary SEO Tags
+  title:
+    "The Importance of Shelters in Combating Homelessness | Rugna Aadhaar Blog",
+  description:
+    "Learn how shelters and community support are vital to the Rugna Aadhaar Foundation's mission to combat homelessness and provide stability.",
+  keywords:
+    "Homeless Shelters, Combating Homelessness, Rugna Aadhaar Impact, Charity Blog, Community Support",
+
+  // Canonical URL for SEO
+  alternates: {
+    canonical:
+      "http://rugnafoundation.org/blog-details/the-importance-of-shelters-in-combating-homelessness",
+  },
+
+  // Open Graph (Social Sharing - Facebook, LinkedIn, etc.)
+  openGraph: {
+    title:
+      "The Importance of Shelters in Combating Homelessness | Rugna Aadhaar Blog",
+    description:
+      "Read the full article on the vital role shelters play in the fight against poverty and homelessness.",
+    url: "http://rugnafoundation.org/blog-details/the-importance-of-shelters-in-combating-homelessness", // <-- IMPORTANT: Replace with your final domain
+    siteName: "Rugna Aadhaar Foundation",
+    type: "article", // Crucial for blog posts
+    images: [
+      {
+        url: "/assets/images/blog/blogPostOne/mainImage.png", // <-- IMPORTANT: Update this to the actual featured image of the post
+        width: 1200,
+        height: 630,
+        alt: "Shelters and Homelessness",
+      },
+    ],
+    locale: "en_US",
+    // Optional: Add article specific tags
+    // publishedTime: '2023-10-27T00:00:00.000Z',
+    // authors: ['Jane Doe', 'Rugna Aadhaar Team'],
+  },
+
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image", // Use large image for blog posts
+    title:
+      "The Importance of Shelters in Combating Homelessness | Rugna Aadhaar Blog",
+    description:
+      "Read the full article on the vital role shelters play in the fight against poverty and homelessness.",
+    image: "/assets/images/blog/blogPostOne/mainImage.png", // <-- IMPORTANT: Update the image path for Twitter
+  },
 };
 
 export const samplePostData = {
